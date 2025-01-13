@@ -1,0 +1,47 @@
+Container With Most Water
+
+
+
+class Solution {
+
+    public int maxWater(int A[]) {
+        
+        // int max = 0;
+        
+        // for(int i=0;i<arr.length-1;i++)
+        // {
+        //     for(int j=i+1;j<arr.length;j++)
+        //     {
+        //         int dist = j-i;
+        //         int height = Math.min(arr[i],arr[j]);
+        //         max = Math.max(max,dist*height);
+        //     }
+        // }
+        
+        // return max;
+        
+        int left=0;
+
+        int right=A.length-1;
+
+        int ans =0;
+
+        while(left<right){
+
+        int tempwater=Math.min(A[left],A[right])*(right-left);
+
+        ans=Math.max(ans,tempwater);
+
+        if(A[left]<A[right])left++;
+
+        else{
+
+            right--;
+
+        }
+
+    }
+    
+    return ans;
+    }
+}
